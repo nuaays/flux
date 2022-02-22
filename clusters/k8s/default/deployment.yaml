@@ -1,7 +1,8 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-deployment
+  name: nginx-Deployment
+  namespace: default
   labels:
     app: nginx
 spec:
@@ -34,7 +35,7 @@ spec:
         - name: nginx
           image: nginx:1.14.1
           #image: uhub.service.ucloud.cn/dk8s/nginx:latest
-          imagePullPolicy: Always
+          imagePullPolicy: IfNotPresent
           resources:
             limits:
               cpu: 0.5
