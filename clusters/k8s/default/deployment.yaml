@@ -46,26 +46,6 @@ spec:
             - name: nginx80
               containerPort: 80
               protocol: TCP
-          livenessProbe:
-            httpGet:
-              path: /
-              port: 80
-              scheme: HTTP
-            failureThreshold: 3
-            initialDelaySeconds: 10
-            periodSeconds: 3
-            successThreshold: 1
-            timeoutSeconds: 1
-          readinessProbe:
-            httpGet:
-              path: /
-              port: 80
-              scheme: HTTP
-            failureThreshold: 3
-            initialDelaySeconds: 10
-            periodSeconds: 5
-            successThreshold: 1
-            timeoutSeconds: 1
           env:
             - name: TZ
               value: Asia/Shanghai
@@ -125,4 +105,3 @@ spec:
       - ip: "10.10.10.10"
         hostnames:
         - "registry.test.cn"
-      terminationGracePeriodSeconds: 60
