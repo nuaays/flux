@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: nginx-deployment
   labels:
-    app: nginx
+    app: nginx-deployment
 spec:
   replicas: 1
   strategy:
@@ -13,11 +13,11 @@ spec:
     type: RollingUpdate
   selector:
     matchLabels:
-      app: nginx
+      app: nginx-deployment
   template:
     metadata:
       labels:
-        app: nginx
+        app: nginx-deployment
     spec:
       #initContainers:
       #  - name: init
@@ -125,4 +125,6 @@ spec:
         hostnames:
         - "registry.test.cn"
       terminationGracePeriodSeconds: 60
+
+
 
